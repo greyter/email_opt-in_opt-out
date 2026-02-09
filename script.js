@@ -46,11 +46,11 @@ function compareLists(newEmails, oldEmails) {
   return {
     optin: [
       ['Email Address', 'Status', 'Profile'],
-      ...optin.map(email => [email, 'Active', 'Cactus'])
+      ...optin.map(email => [email, 'Active', 'employee'])
     ],
     optout: [
       ['Email Address', 'Status', 'Profile'],
-      ...optout.map(email => [email, 'Deleted', 'Cactus'])
+      ...optout.map(email => [email, 'Deleted', 'employee'])
     ]
   };
 }
@@ -72,3 +72,4 @@ function downloadCSV(data, type) {
 
   document.getElementById('result').innerHTML += `<p>Fichier généré : ${filename}</p>`;
 }
+
