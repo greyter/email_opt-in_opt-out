@@ -31,11 +31,12 @@ function parseCSV(file) {
 }
 
 function cleanEmails(emails) {
-  const allowedDomains = ['@cactus.lu', '@caterman.lu', '@belle-etoile.lu', '@schnekert.lu'];
+  const allowedDomains = ['@cactus.lu', '@caterman.lu', '@belle-etoile.lu', '@schnekert.lu', '@createam.lu'];
   return emails
     .map(email => email.toLowerCase().trim())
     .filter(email => allowedDomains.some(domain => email.endsWith(domain)));
 }
+
 
 function compareLists(newEmails, oldEmails) {
   const oldSet = new Set(oldEmails);
@@ -44,9 +45,9 @@ function compareLists(newEmails, oldEmails) {
   const optin = newEmails.filter(email => !oldSet.has(email));
   const optout = oldEmails.filter(email => !newSet.has(email));
 
-  rreturn {
+  return {
     optin: [
-      ['Email Address', 'Status', 'Profile'],
+      ['Email Address', 'Profile'],
       ...optin.map(email => [email, 'employee'])
     ],
     optout: [
@@ -73,5 +74,3 @@ function downloadCSV(data, type) {
 
   document.getElementById('result').innerHTML += `<p>Fichier généré : ${filename}</p>`;
 }
-
-
