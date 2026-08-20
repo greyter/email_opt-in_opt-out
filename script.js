@@ -47,8 +47,8 @@ function compareLists(newEmails, oldEmails) {
 
   return {
     optin: [
-      ['Email Address', 'Profile'],
-      ...optin.map(email => [email, 'employee'])
+      ['Email Address', 'Profile', 'Language'],
+      ...optin.map(email => [email, 'employee', 'FR'])
     ],
     optout: [
       ['Email Address'],
